@@ -1,0 +1,161 @@
+.projects {
+  margin-bottom: 16rem;
+  scroll-margin-top: 15rem;
+}
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.9rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #c64a31;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -22px;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100% / 3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 450px;
+  list-style: none;
+  background: #fdfdfd;
+  cursor: pointer;
+  padding-bottom: 50px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.card .img img {
+  width: 350px;
+  height: 400px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.397);
+  border-radius: 20px;
+  object-fit: cover;
+  margin: -100px;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+/*.projects .projects__content {
+  max-width: 56rem;
+  text-align: center;
+  margin: 0 auto 6rem;
+}
+
+.projects ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.projects ul li.projects__reversed-list {
+  flex-direction: row-reverse;
+}
+
+.projects ul li:not(:last-of-type) {
+  margin-bottom: 12rem;
+}
+
+.projects ul li .image img {
+  width: 100%;
+  min-width: 40rem;
+  max-width: 47rem;
+  height: auto;
+}
+
+.projects ul li .projects__info {
+  max-width: 47rem;
+}
+
+.projects ul li .projects__info p {
+  margin: 1rem 0 4rem;
+}
+
+.projects ul li .projects__info a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .projects ul li,
+  .projects ul li.projects__reversed-list {
+    flex-direction: column;
+  }
+
+  .projects ul li .projects__info {
+    max-width: 66rem;
+  }
+
+  .projects ul li .image img {
+    min-width: auto;
+  }
+}*/

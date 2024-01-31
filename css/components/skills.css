@@ -1,0 +1,64 @@
+.skills {
+  background-image: url(backgound/diferencial.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  scroll-margin-top: 15rem;
+}
+
+.skills .skills__content {
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.skills .skills__content h2{
+  color: white;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.507);
+  margin-bottom: 20px;
+}
+
+.skills .skills__content h3{
+  color: white;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.507);
+}
+
+.skills .skills__content .description {
+  max-width: 56rem;
+  margin: 0 auto 6rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.507);
+}
+
+.skills .skills__content ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+.skills .skills__content ul p{
+  text-align: justify;
+  background-color: white;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.397);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.skills .skills__content ul li .image-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.397);
+  margin: 0 auto;
+}
+
+.skills .skills__content ul li h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+}

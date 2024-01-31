@@ -1,0 +1,122 @@
+header {
+  background-image: url(backgound/header.png);
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  scroll-margin-top: 20rem;
+}
+header .title{
+  color: #e4b24c;
+}
+header .header__left {
+  max-width: 62rem;
+  flex: 1;
+}
+
+header .header__left h3{
+  text-align: center;
+}
+
+header .header__left h2{
+  color:#48201f ;
+}
+
+header .header__left p {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  max-width: 50rem;
+  text-align: justify;
+}
+
+header .header__left a{
+  position: static;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header .header__left a{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #48201f;
+  border: 2px solid #48201f;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+header .header__left span{
+  position: relative;
+  z-index: 2;
+}
+
+header .header__left a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #48201f;
+  transition: all .35s;
+}
+
+header .header__left a:hover{
+  color: #fff;
+}
+
+header .header__left a:hover:after{
+  width: 100%;
+}
+
+header .header__right .header__image {
+  position: relative;
+  line-height: 0;
+}
+
+header .header__right .header__image::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #48201f;
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+header .header__right .header__image .lucas {
+  width: 450px;
+  border-radius: 0.5rem;
+  min-width: 25rem;
+  max-width: 100%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.452);
+}
+
+header .header__right .header__image .background {
+  position: absolute;
+  top: -4rem;
+  right: -2.5rem;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  header .header__left p {
+    margin: 2rem auto 4rem;
+  }
+}
