@@ -18,13 +18,27 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"/>
+    <title>Verificação de Senha</title>
+    <style>
+        #formulario {
+            transition: opacity 0.3s ease;
+        }
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+
   </head>
   <body>
     <!-- navbar -->
     <nav class="navbar">
       <div class="navbar__content max-width mb-0">
-        <a href="/">
-          <img src="assets/logo.png" alt="logo" style="width: 120px; margin-top: -20px;"/>
+        <a href="#" class="navbar__logo">
+          <img src="assets/logo.png" alt="logo" style="width: 200px; margin-top: -20px; margin-left: -200px;"/>
         </a>
         <ul class="navbar__links">
           <li><a href="#header">Início</a></li>
@@ -32,7 +46,12 @@
           <li><a href="#skills">Diferencial</a></li>
           <li><a href="#projects">Informações</a></li>
           <li><a href="#footer">Contato</a></li>
+          <li>
+            <a style="color: chocolate; font-weight: bold;" href="javascript:void(0);" onclick="mostrarFormularioSenha()">Alunos</a>
+          </li>
         </ul>
+        
+</div>
         <div class="navbar__mobile">
           <img src="assets/menu.svg" alt="menu" class="burguer" />
           <ul class="mobile__links">
@@ -41,33 +60,42 @@
             <li><a href="#skills">Habilidades</a></li>
             <li><a href="#projects">Projetos</a></li>
             <li><a href="#footer">Contato</a></li>
+            <li><a style="color: chocolate; font-weight: bold;" href="javascript:void(0);" onclick="mostrarFormularioSenha()">Alunos</a></li>
           </ul>
         </div>
       </div>
+      <form id="passwordForm" style="display: none;">
+        <label for="password">Digite a senha:</label>
+        <input type="password" id="password" name="password">
+        <input type="checkbox" id="showPassword" onclick="togglePassword()"> Mostrar senha
+        <button type="button" onclick="verificarSenha()">Enviar</button>
+    </form>
     </nav>
 
     <!-- header -->
-    <header id="header" class="max-width">
-      <div class="header__left">
-        <h1 class="title">MY ENGLISH CLUB</h1>
-        <h2>Desperte sua fluência. Nunca pare de aprender</h2>
-        <p>
-          Bem-vindos ao nosso portal de educação dedicado ao aprendizado da Língua Inglesa! Aqui vocês encontrarão uma experiência de ensino envolvente e eficaz, projetada para ajudá-los a alcançar fluência no idioma de forma prática e dinâmica. Navegue por nossos cursos, desenvolvidos por especialistas, e mergulhe em nossa jornada educacional. Vamos começar!
-        </p>
-        <a href="png/WOORKBOOK (16).pdf" target="_blank"><span>Saiba mais!</span></a>
+    <header id="header" class="header">
+      <div class="box">
+       
+        <img src="assets/post-aprenda-ingles .png" alt="">
       </div>
-      <div class="header__right">
-        <div class="header__image">
-          <img src="assets/lucas-silva.png" alt="Lucas Silva" class="lucas" />
-          <img src="assets/abstract.svg" alt="background" class="background" />
-        </div>
+      <div class="header__mobile">
+        <img class="lembrete" src="assets/post-mobile-header.png" alt="">
       </div>
     </header>
 
     <!-- Sobre -->
+    
     <section id="about" class="about max-width">
+      <div class="header">
+        <h1 class="title">MY ENGLISH CLUB</h1>
+        <h2>Desperte sua fluência. Nunca pare de aprender</h2>
+        <p>
+          Bem-vindos ao nosso portal de educação dedicado ao aprendizado da Língua Inglesa! <br>Aqui vocês encontrarão uma experiência de ensino envolvente e eficaz, <br>projetada para ajudá-los a alcançar fluência no idioma de forma prática e dinâmica.<br> Navegue por nossos cursos, desenvolvidos por especialistas, e mergulhe em nossa jornada educacional. <br>Vamos começar!
+        </p>
+        <a href="png/WOORKBOOK (16).pdf" target="_blank"><span>Saiba mais!</span></a>
+      </div>
       <div class="about__left">
-        <img class="img_video" src="assets/video-chamada.png" alt="video chamada" style="width: 550px; height: 320px;">
+        <img class="img_video" src="assets/were1.png" alt="video chamada" style="width: 550px; height: 320px;">
         <img src="assets/abstract.svg" alt="background" class="background2" />
         <h3 class="secondary-title">QUEM SOMOS?</h3>
         <p>
@@ -82,7 +110,7 @@
         <p>
           O objetivo principal da nossa plataforma de ensino é incentivar a prática regular do seu aprendizado voltado ao conhecimento da Língua Inglesa por meio de aulas que utilizam de metodologias ativas e práticas de conversações, com 220 horas de aulas remotas, 252 atividades adicionais, e-books completos divididos para cada módulo de ensino indicado, com mais de 60 páginas de conteúdo cada, auxílio prático e teórico para a realização de exames de proficiência com valor internacional, além de suporte e base linguística para a experiência profissional, acadêmica e cultural em intercâmbios internacionais.
         </p>
-        
+        <img src="assets/Sem Título-1.png" alt="">
       </div>
     </section>
 
@@ -93,47 +121,46 @@
         <p class="description">
           Em nossas aulas usamos metodos de ensino em que o aluno além de aprender também se divirta através de musicas, filmes, series, livros e jogos
         </p>
-        <ul>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/game.png" alt="Desenvolvimento Web" style="width: 60px;"/>
-            </div>
-            <h3>GAMES</h3>
-            <p>
-              Descubra como aprender pode ser emocionante e eficaz enquanto mergulha em desafios educativos que estimulam o pensamento crítico e a criatividade. Junte-se a nós e transforme sua jornada de aprendizado em uma aventura inesquecível!
-            </p>
-          </li>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/film.png" alt="Web Design" style="width: 60px;"/>
-            </div>
-            <h3>SÉRIES E FILMES</h3>
-            <p>
-              Explorar o mundo da ficção pode ser uma poderosa ferramenta para expandir seu conhecimento. Assista, aprenda e divirta-se em nossa coleção especial de séries e filmes educativos!"<br>
-              <a class="link" style="font-size: 12px;" href="primeaba.html"><strong>Clique aqui para explorar⬅️</strong></a>
-            </p>
-          </li>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/book.png" alt="UX/UI Design" style="width: 60px;"/>
-            </div>
-            <h3>CLUBE DE LEITURA</h3>
-            <p>
-              Participe do nosso Clube de Leitura e compartilhe histórias envolventes com entusiastas como você. Uma comunidade onde cada página lida se transforma em conversas cativantes. Junte-se a nós e viva a magia da leitura!<br>
-              <a class="link" style="font-size: 12px;" href="books.html"><strong>Clique aqui para explorar⬅️</strong></a>
-            </p>
-          </li>
-          <li class="skills__item">
-            <div class="image-container">
-              <img src="assets/music.png" alt="Gerenciamentos de versões" style="width: 60px;"/>
-            </div>
-            <h3>MÚSICA</h3>
-            <p>
-              Aprender nunca foi tão melódico. Sintonize-se em nossa playlist e deixe a música ser a trilha sonora do seu aprendizado!"
-            </p>
-          </li>
-        </ul>
+       <div class="container">
+        <div id="card" class="card">
+          <div id="content" class="content">
+            <a href="#">
+              <img src="assets/217119.png" style width="70%" alt="games">
+            </a>
+          </div>
+        </div>
+        <div id="card" class="card">
+          <div id="content" class="content">
+            <a href="primeaba.html">
+              <img src="assets/745.png" style width="70%" alt="films">
+            </a>
+          </div>
+        </div>
+        <div id="card" class="card">
+          <div id="content" class="content">
+            <a href="https://open.spotify.com/playlist/3rQQv3Tit8ZW5nAV9Zmzd1?si=ZutmpkPmRq2yBri2EmBARQ" target="_blank">
+              <img src="assets/282151.png" style width="70%" alt="music">
+            </a>
+          </div>
+        </div>
+        <div id="card" class="card">
+          <div id="content" class="content">
+            <a href="books.html">
+              <img src="assets/5999928.png" style width="70%" alt="books">
+            </a>
+          </div>
+        </div>
+        <div id="card" class="card">
+          <div id="content" class="content">
+            <a href="#">
+              <img src="assets/icon-link.png" style width="70%" alt="links">
+            </a>
+          </div>
+        </div>
+         
+       </div>
       </div>
+      
     </section>
 
     <!-- Projetos -->
@@ -142,29 +169,24 @@
         <i class="fa-solid fa-angle-left"></i>
         <ul class="carousel">
             <li class="card">
-                <div class="img"><img src="assets/1.png" alt="img"></div>
+                <div class="img"><img src="assets/informações-1.png" alt="img"></div>
             </li>
             <li class="card">
-                <div class="img"><img src="assets/2.png" alt="img"></div>
+                <div class="img"><img src="assets/informacoes-2.png" alt="img"></div>
             </li>
             <li class="card">
-                <div class="img"><img src="assets/3.png" alt="img"></div>
+                <div class="img"><img src="assets/informaoes-3.png" alt="img"></div>
             </li>
                 <li class="card">
-                <div class="img"><img src="assets/4.png" alt="img"></div>
+                <div class="img"><img src="assets/informacoes-4.png" alt="img"></div>
             </li>
                 <li class="card">
-                <div class="img"><img src="assets/5.png" alt="img"></div>
+                <div class="img"><img src="assets/informacoes-5.png" alt="img"></div>
             </li>
                <li class="card">
-                <div class="img"><img src="assets/6.jpg" alt="img"></div>
+                <div class="img"><img src="assets/informacoes-6.png" alt="img"></div>
             </li>
-                <li class="card">
-                <div class="img"><img src="assets/7.jpg" alt="img"></div>
-            </li>
-                <li class="card">
-                <div class="img"><img src="assets/8.png" alt="img"></div>
-            </li>
+
         </ul>
         <i class="fa-solid fa-angle-right"></i>
     </div>
@@ -179,7 +201,7 @@
         </p>
         <ul class="mb-l">
           <li>
-            <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
+            <a href="https://www.instagram.com/myenglishcluboficial/" target="_blank"><img src="assets/instagram.svg" alt="Instagram" /></a>
           </li>
           <li>
             <a href="#"><img src="assets/linkedin.svg" alt="Linkedin" /></a>
@@ -209,8 +231,51 @@
   z-index:1000;" target="_blank">
 <i style="margin-top:16px" class="fa fa-whatsapp"></i>
 </a>
-Olá, vim através do site My English Club, quero saber mais sobre as aulas!
+
     <!-- script -->
     <script src="scripts/index.js"></script>
+    <script src="scripts/vanilla-tilt.js"></script>
+    <script>
+      function mostrarFormularioSenha() {
+            document.getElementById("passwordForm").style.display = "block";
+        }
+      // Função para alternar visibilidade da senha
+      function togglePassword() {
+          const passwordField = document.getElementById('password');
+          const showPasswordCheckbox = document.getElementById('showPassword');
+          passwordField.type = showPasswordCheckbox.checked ? 'text' : 'password';
+      }
+
+      // Função para verificar a senha
+      function verificarSenha() {
+          const senhaCorreta = "1234"; // Substitua pela senha correta
+          const senhaDigitada = document.getElementById('password').value;
+
+          if (senhaDigitada === senhaCorreta) {
+                // Esconde o formulário de senha
+                document.getElementById('passwordForm').style.display = 'none';
+                // Redireciona diretamente para o link (funciona melhor em dispositivos móveis)
+                window.location.href = "https://drive.google.com/drive/folders/1-V0jVKdF0hdp9NUiAyAiJxBjLkvi2Uv1?usp=sharing";
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            } 
+      }
+  </script>
+
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+          max: 25,
+          speed: 400,
+          glare:true,
+          "max-glare":0
+      });
+      VanillaTilt.init(document.querySelectorAll(".circle"), {
+          max: 25,
+          speed: 400,
+          glare:true,
+          "max-glare":1
+      });
+  </script> 
   </body>
+  
 </html>

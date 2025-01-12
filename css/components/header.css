@@ -1,122 +1,94 @@
 header {
-  background-image: url(backgound/header.png);
-  background-size: cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4rem;
-  scroll-margin-top: 20rem;
-}
-header .title{
-  color: #e4b24c;
-}
-header .header__left {
-  max-width: 62rem;
-  flex: 1;
-}
-
-header .header__left h3{
-  text-align: center;
+  background-image: url(backgound/4.png);
+  padding: 0;
+  margin: 0;
+  margin-top: -30px;
+  width: 100%; /* Ou qualquer valor específico */
+  height: 650px; /* Ou qualquer valor específico */
+  background-size: cover; /* Faz a imagem cobrir o elemento completamente */
+  background-position: center; /* Centraliza a imagem no elemento */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  scroll-margin-top: 100rem;
+  display: flex; /* Ativa o Flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; 
 }
 
-header .header__left h2{
-  color:#48201f ;
+.box{
+  width: 690px;
+  height: 750px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin-left: 1000px;
+  margin-top: -100px;
 }
 
-header .header__left p {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-  max-width: 50rem;
-  text-align: justify;
+.box h1{
+  font-size: 5rem;
+  font-family: 'finalsix';
+  font-weight: bold;
+  color: #c74e32;
 }
 
-header .header__left a{
-  position: static;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-header .header__left a{
+.box img{
+  width: 550px;
+  top: 150px;
+  margin-left: -100px;
+  border-radius: 20px;
+  position: relative;
   display: block;
-  width: 200px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 18px;
-  font-family: sans-serif;
-  text-decoration: none;
-  color: #48201f;
-  border: 2px solid #48201f;
-  letter-spacing: 2px;
-  text-align: center;
-  position: relative;
-  transition: all .35s;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.568);
 }
-
-header .header__left span{
-  position: relative;
-  z-index: 2;
-}
-
-header .header__left a:after{
+.box p{
   position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #48201f;
-  transition: all .35s;
+  top: 87%; /* Ajusta o texto verticalmente */
+  left: 77%; /* Ajusta o texto horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o texto em relação ao ponto definido por top e left */
+  color: #FFF; /* Cor do texto, ajuste conforme necessário */
+  font-size: 20px; /* Tamanho da fonte, ajuste conforme necessário */
+  font-weight: bold; /* Opção para deixar o texto em negrito */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra ao texto para melhorar a legibilidade sobre a imagem */
+  text-align: center; /* Centraliza o texto */
+  z-index: 10;
 }
 
-header .header__left a:hover{
-  color: #fff;
-}
-
-header .header__left a:hover:after{
-  width: 100%;
-}
-
-header .header__right .header__image {
-  position: relative;
-  line-height: 0;
-}
-
-header .header__right .header__image::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #48201f;
-  position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
-  border-radius: 0.5rem;
-  z-index: -1;
-}
-
-header .header__right .header__image .lucas {
-  width: 450px;
-  border-radius: 0.5rem;
-  min-width: 25rem;
-  max-width: 100%;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.452);
-}
-
-header .header__right .header__image .background {
-  position: absolute;
-  top: -4rem;
-  right: -2.5rem;
-  z-index: -1;
+.header__mobile .lembrete{
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {
   header {
     flex-direction: column-reverse;
     text-align: center;
+    background-image: url(backgound/header-mobile.png);
   }
+
+  header .box img{ 
+    display: none;
+  }
+
+    header .header__mobile .lembrete{
+      display: flex;
+      height: auto;
+      width: 100%;
+    }
+
+    header .box p{
+      margin-left: -100px;
+      margin-top: -210px;
+      font-size: 15px;
+      position: relative;
+      
+    }
+
 
   header .header__left p {
     margin: 2rem auto 4rem;
   }
+}
+@font-face {
+  font-family: finalsix;
+  src: url(fonts/fonnts.com-FinalSix_Bold.otf);
 }
